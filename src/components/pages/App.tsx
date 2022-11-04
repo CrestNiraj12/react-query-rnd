@@ -1,8 +1,19 @@
 import React from "react";
-import logo from "../../assets/images/logo.svg";
+import Posts from "./Posts";
+import Post from "./Post";
 
-function App() {
-  return <div className="App">Hello</div>;
-}
+const App = () => {
+  const [postId, setPostId] = React.useState(null);
+
+  return (
+    <div className="container">
+      {postId != null ? (
+        <Post postId={postId} setPostId={setPostId} />
+      ) : (
+        <Posts setPostId={setPostId} />
+      )}
+    </div>
+  );
+};
 
 export default App;
